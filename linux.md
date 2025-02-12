@@ -14,3 +14,18 @@ vim /etc/sudoers
 budi    ALL=(ALL:ALL)ALL
 ```
 
+#### 配置权限
+```
+bash create_user.sh w00910522 w00910522
+```
+
+
+#### 安装anaconda以及镜像配置
+```
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+#设置搜索时显示通道地址
+conda config --set show_channel_urls yes
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+```
