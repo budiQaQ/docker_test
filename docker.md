@@ -39,3 +39,21 @@ systemctl status docker
 ```
 
 #### 配置python环境
+- 打一个Dockerfile
+```Dockerfile
+FROM python  # 拉取python镜像
+RUN pip install numpy -i https://pypi.tuna.tsinghua.edu.cn/simple  # 在清华源安装numpy
+RUN mkdir -p /workfolder  # 在docker镜像中建立工作路径
+COPY ./main.py /workfolder/  # 将本地文件拷贝至docker内的工作路径下
+CMD ["python", "/workfolder/main.py"]  # 在python镜像中执行文件
+```
+
+- 创建镜像文件
+```bash
+docker image build -t new_python:v01
+```
+
+- 执行容器
+```bash
+docker container run --rm -it new_python:v02
+```
